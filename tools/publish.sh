@@ -1,2 +1,2 @@
 #!/bin/bash
-bash -e ./internals/publish.sh
+bash -e ./tools/internals/publish.sh
