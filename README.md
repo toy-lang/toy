@@ -1,2 +1,3 @@
 # toy
-The main CLI for toylang.
+> "i liek toy", as a wise man (me) once said.
+
