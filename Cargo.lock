@@ -4,16 +4,16 @@ version = 3
 
 [[package]]
 name = "Toy"
-version = "0.1.1"
+version = "0.1.2"
 
 [[package]]
 name = "toyc"
-version = "0.1.1"
+version = "0.1.2"
 
 [[package]]
 name = "toylang"
-version = "0.1.1"
+version = "0.1.2"
 
 [[package]]
 name = "toyvm"
-version = "0.1.1"
+version = "0.1.2"
