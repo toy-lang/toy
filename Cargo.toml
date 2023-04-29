@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "toy",
+    "toyc",
+    "toyvm"
+]
