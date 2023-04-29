@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "Toy"
+version = "0.1.0"
+
+[[package]]
 name = "toyc"
 version = "0.1.0"
 

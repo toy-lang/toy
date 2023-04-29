@@ -2,6 +2,13 @@
 name = "toylang"
 version = "0.1.0"
 edition = "2021"
+authors = ["WhyNotDogie"]
+description = "The toylang CLI/Wrapper"
+repository = "https://github.com/toy-lang/toy/"
+license = "ISC"
+keywords = ["toylang", "toy"]
+categories = ["Compilers", "Command line utilities", "Development tools", "Parser implementations", "Emulators"]
+workspace = "../"
 
 [[bin]]
 name = "toy"
