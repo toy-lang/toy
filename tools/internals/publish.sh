@@ -1,5 +1,5 @@
 #!/bin/bash
-bash -e ../test.sh
+bash -e ./tools/test.sh
 cd ./toylang
 cargo publish
 cd ../toyc
