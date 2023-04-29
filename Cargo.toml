@@ -1,12 +1,12 @@
 [package]
-version = "0.1.0"
+version = "0.1.1"
 name = "Toy"
 authors = ["WhyNotDogie"]
 description = "Toylang"
 repository = "https://github.com/toy-lang/toy/"
 license = "ISC"
 keywords = ["toylang", "toy"]
-categories = ["Compilers", "Command line utilities", "Development tools", "Parser implementations", "Emulators"]
+categories = ["compilers", "command-line-utilities", "development-tools", "parser-implementations", "emulators"]
 
 [[bin]]
 name = "toy"
