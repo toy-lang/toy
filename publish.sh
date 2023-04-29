@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ./toylang
 cargo publish
 cd ../toyc
