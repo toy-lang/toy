@@ -1,7 +1,9 @@
 [workspace]
 
+default-members = ["toylang"]
+
 members = [
-    "toy",
+    "toylang",
     "toyc",
     "toyvm"
 ]

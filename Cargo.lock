@@ -3,11 +3,11 @@
 version = 3
 
 [[package]]
-name = "toy"
+name = "toyc"
 version = "0.1.0"
 
 [[package]]
-name = "toyc"
+name = "toylang"
 version = "0.1.0"
 
 [[package]]
