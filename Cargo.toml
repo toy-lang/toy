@@ -1,20 +1,4 @@
-[package]
-version = "0.1.2"
-name = "Toy"
-authors = ["WhyNotDogie"]
-description = "Toylang"
-repository = "https://github.com/toy-lang/toy/"
-license = "ISC"
-keywords = ["toylang", "toy"]
-categories = ["compilers", "command-line-utilities", "development-tools", "parser-implementations", "emulators"]
-
-[[bin]]
-name = "toy"
-path = "toylang/src/main.rs"
-
 [workspace]
-
-default-members = ["toylang"]
 
 members = [
     "toylang",
