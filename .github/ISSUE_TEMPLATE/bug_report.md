@@ -12,7 +12,7 @@ assignees: ''
 **Describe the bug**
 A description of the bug
 
-**To Reproduce**
+**How to reproduce**
 Steps to reproduce the behavior
 
 **Expected behavior**
