@@ -3,5 +3,6 @@
 members = [
     "toylang",
     "toyc",
-    "toyvm"
+    "toyvm",
+    "tests"
 ]
