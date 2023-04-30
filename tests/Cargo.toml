@@ -2,8 +2,8 @@
 name = "tests"
 version = "0.1.0"
 edition = "2021"
-publish = false
 workspace = "../"
+publish = false
 
 [dev-dependencies]
 toyc = { path = "../toyc" }
