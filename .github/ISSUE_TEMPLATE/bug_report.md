@@ -9,23 +9,23 @@ assignees: ''
 
 <!--All of these fields are required (exept the last one)-->
 
-**Describe the bug**
+**Describe the bug**  
 A description of the bug
 
-**How to reproduce**
+**How to reproduce**  
 Steps to reproduce the behavior
 
-**Expected behavior**
+**Expected behavior**  
 Why should have happened
 
-**Command line output**
+**Command line output**  
 Command line output
 
-**Toy version**
+**Toy version**  
 The output of the command `toy version --verbose`
 
-**OS**
+**OS**  
 The OS and Version (e.g. Windows 11)
 
-**Additional context**
+**Additional context**  
 Add any other context about the problem here.
