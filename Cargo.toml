@@ -4,5 +4,6 @@ members = [
     "toylang",
     "toyc",
     "toyvm",
-    "tests"
+    "tests",
+    "toy_runtime"
 ]

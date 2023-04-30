@@ -7,6 +7,7 @@ workspace = "../"
 
 [dev-dependencies]
 toyc = { path = "../toyc" }
+toy_runtime = { path = "../toy_runtime" }
 
 [[test]]
 name = "tests"

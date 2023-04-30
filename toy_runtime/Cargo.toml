@@ -1,16 +1,15 @@
 [package]
-name = "toyvm"
-version = "0.1.2"
+name = "toy_runtime"
+version = "0.1.0"
 edition = "2021"
 authors = ["WhyNotDogie"]
-description = "The toylang CLI/Wrapper"
+description = "The toylang bytecode runtime API"
 repository = "https://github.com/toy-lang/toy/"
 license = "ISC"
 keywords = ["toylang", "toy"]
-categories = ["command-line-utilities", "emulators"]
+categories = ["emulators", "command-line-utilities", "development-tools"]
 workspace = "../"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-toy_runtime = { version = "0.1.*", path = "../toy_runtime" }
