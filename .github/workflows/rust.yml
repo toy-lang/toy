@@ -18,18 +18,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: Leafwing-Studios/cargo-cache@v1
     - name: Build
       run: cargo build --verbose
     - name: Test
       run: cargo test --verbose
-    - name: Archive target dir
-      uses: actions/upload-artifact@v3
-      with:
-        name: target
-        path: target
-    - name: Cache cargo packages
-      uses: actions/cache@v3
-      with:
-        key: pkgs
-        path: ~/.cargo/registry
+#    - name: Archive target dir
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: target
+#        path: target
+#    - name: Cache cargo packages
+#      uses: actions/cache@v3
+#      with:
+#        key: pkgs
+#        path: ~/.cargo/registry
       
