@@ -23,7 +23,7 @@ jobs:
     - name: Test
       run: cargo test --verbose
     - name: Archive target dir
-        uses: actions/upload-artifact@v3
-        with:
-          name: target
-          path: dist
+      uses: actions/upload-artifact@v3
+      with:
+        name: target
+        path: dist
