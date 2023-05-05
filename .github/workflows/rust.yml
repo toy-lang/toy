@@ -27,7 +27,7 @@ jobs:
       with:
         name: target
         path: target
-    - Cache cargo packages
+    - name: Cache cargo packages
       uses: actions/cache@v3
       with:
         path: ~/.cargo/registry
