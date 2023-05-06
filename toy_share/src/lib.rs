@@ -26,7 +26,14 @@ pub enum Command {
     Set(String, Bytecode),
     Add(Bytecode, Bytecode),
     Subtract(Bytecode, Bytecode),
+    Modulo(Bytecode, Bytecode),
     Negate(Bytecode),
+
+    Not(Bytecode),
+    And(Bytecode),
+    Or(Bytecode),
+    Greater(Bytecode),
+    Lesser(Bytecode),
 
     Bool(bool),
     Number(i32),
