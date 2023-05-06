@@ -6,5 +6,6 @@ members = [
     "toyvm",
     "tests",
     "toy_runtime",
-    "toy_macros"
+    "toy_macros",
+    "toy_share"
 ]
