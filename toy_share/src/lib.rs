@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use bincode;
 use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Bytecode {
     pub children: Vec<Command>
 }
@@ -18,7 +18,7 @@ pub fn de(v: &Vec<u8>) -> Result<Bytecode, Box<bincode::ErrorKind>> {
     return bincode::deserialize(v);
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub enum Command {
     ImportDyn(String),
     Return(Bytecode),

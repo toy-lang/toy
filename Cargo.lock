@@ -65,6 +65,7 @@ name = "tests"
 version = "0.1.0"
 dependencies = [
  "toy_runtime",
+ "toy_share",
  "toyc",
 ]
 
