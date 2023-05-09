@@ -27,6 +27,10 @@ pub struct SkeletonStatusMessage {
 }
 
 pub enum SkeletonStatusMessageType {
+    Error(diagnostics::Error),
+    Warning(diagnostics::Warning),
+    Info(diagnostics::Info),
+    ICE(diagnostics::ICE),
     OpeningFile(String)
 }
 
@@ -39,6 +43,5 @@ pub trait Skeleton {
             children: vec![toy_share::Command::Bool(false)] //If no ovveride is given, insert false.
         };
     }
-    #[allow(unused_variables)] //This is needed, status should be used if overrided but not normally.
-    fn report_status(&self, status: SkeletonStatusMessage) {}
+    fn report_status(&self, status: SkeletonStatusMessage);
 }
