@@ -2,7 +2,7 @@ use logos::Logos;
 
 #[derive(Logos, Debug, PartialEq)]
 pub enum Token {
-    #[regex(r"[ \t\n\f]", priority = 1000)]
+    #[regex(r"[ \t\n\f]", priority = 0)]
     Whitespace,
     #[token(";")]
     SemiColon,
@@ -11,12 +11,13 @@ pub enum Token {
     LeftParen,
     #[token(")")]
     RightParen,
-    #[regex("[a-zA-Z_]+", priority = 999)]
+    #[regex("[a-zA-Z_]+", priority = 1)]
     Ident,
-    #[regex(r"//[^\n]*", priority = 4)]
-    #[regex(r"//\*([^\*])((?:[^\*]|\*[^/])*)\*//", priority = 1)]
+    #[regex(r"//[^/]([^\n]*)", priority = 2)]
+    #[regex(r"/\*[^*]([\s\S]*)\*/", priority = 3)]
     Comment,
-    #[regex(r"//\*\*((?:[^*]|\*[^/])*)\*//", priority = 0)]
+    #[regex(r"///([^\n]*)", priority = 4)]
+    #[regex(r"/\*\*([\s\S]*)\*/", priority = 5)]
     DocComment
 }
 
@@ -26,7 +27,9 @@ mod tests {
 
     #[test]
     fn comments() {
-        assert_eq!(Token::lexer("/** hi . 7c huy */").next().unwrap().unwrap(), Token::DocComment);
-        assert_eq!(Token::lexer("/* hi . 7c huy */").next().unwrap().unwrap(), Token::Comment);
+        let a: Vec<_> = Token::lexer("/** */").collect();
+        println!("{:?}", a);
+        assert_eq!(a[0].as_ref().unwrap(), &Token::DocComment);
+        assert_eq!(Token::lexer("/* */").next().unwrap().unwrap(), Token::Comment);
     }
 }
