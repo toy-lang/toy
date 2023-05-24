@@ -2,15 +2,26 @@
 
 */
 
+#[forbid(
+    deprecated_in_future,
+    deprecated,
+    arithmetic_overflow,
+    clippy::disallowed_names,
+)]
+
+#[allow(
+    clippy::needless_return // Why is this warned on by default?
+)]
+
 pub mod diagnostics;
 pub mod value;
 pub mod lexer;
 pub mod parser;
-mod collect;
 
 pub struct SourceCode {
     pub display_name: String,
     pub code: String,
+    /// The name, usually the file name.
     pub name: String
 }
 
@@ -44,4 +55,8 @@ pub trait Skeleton {
         return value::Value::Bool(false);
     }
     fn report_status(&self, status: SkeletonStatusMessage);
+}
+
+pub fn builder<T: Skeleton>(skel: T) {
+    skel.entry();
 }
