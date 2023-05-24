@@ -3,15 +3,6 @@
 version = 3
 
 [[package]]
-name = "bincode"
-version = "1.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1f45e9417d87227c7a56d22e471c6206462cba514c7590c09aff4cf6d1ddcad"
-dependencies = [
- "serde",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.56"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -30,26 +21,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde"
-version = "1.0.162"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71b2f6e1ab5c2b98c05f0f35b236b22e8df7ead6ffbf51d7808da7f8817e7ab6"
-dependencies = [
- "serde_derive",
-]
-
-[[package]]
-name = "serde_derive"
-version = "1.0.162"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2a0814352fd64b58489904a44ea8d90cb1a91dcb6b4f5ebabc32c8318e93cb6"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
 name = "syn"
 version = "2.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -64,8 +35,6 @@ dependencies = [
 name = "tests"
 version = "0.1.0"
 dependencies = [
- "toy_runtime",
- "toy_share",
  "toyc",
 ]
 
@@ -78,37 +47,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "toy_runtime"
-version = "0.1.4"
-
-[[package]]
-name = "toy_share"
-version = "0.1.4"
-dependencies = [
- "bincode",
- "serde",
-]
-
-[[package]]
 name = "toyc"
 version = "0.1.4"
-dependencies = [
- "toy_share",
-]
 
 [[package]]
 name = "toylang"
 version = "0.1.4"
 dependencies = [
- "toy_runtime",
  "toyc",
-]
-
-[[package]]
-name = "toyvm"
-version = "0.1.4"
-dependencies = [
- "toy_runtime",
 ]
 
 [[package]]

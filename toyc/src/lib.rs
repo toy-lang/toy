@@ -3,8 +3,10 @@
 */
 
 pub mod diagnostics;
+pub mod value;
 pub mod lexer;
 pub mod parser;
+mod collect;
 
 pub struct SourceCode {
     pub display_name: String,
@@ -38,10 +40,8 @@ pub trait Skeleton {
     fn import(&self, name: String, display_name: String) -> SourceCode;
     fn entry(&self) -> SourceCode;
     #[allow(unused_variables)] //This is needed, status should be used if overrided but not normally.
-    fn ccf(&self, key: String) -> toy_share::Bytecode {
-        return toy_share::Bytecode {
-            children: vec![toy_share::Command::Bool(false)] //If no ovveride is given, insert false.
-        };
+    fn ccf(&self, key: String) -> value::Value {
+        return value::Value::Bool(false);
     }
     fn report_status(&self, status: SkeletonStatusMessage);
 }

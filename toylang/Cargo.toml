@@ -17,5 +17,4 @@ path = "src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-toy_runtime = { version = "0.1.*", path = "../toy_runtime" }
 toyc = { version = "0.1.*", path = "../toyc" }

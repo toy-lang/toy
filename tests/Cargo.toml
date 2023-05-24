@@ -7,8 +7,6 @@ publish = false
 
 [dev-dependencies]
 toyc = { path = "../toyc" }
-toy_runtime = { path = "../toy_runtime" }
-toy_share = { path = "../toy_share" }
 
 [[test]]
 name = "tests"

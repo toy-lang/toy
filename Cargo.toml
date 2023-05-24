@@ -3,9 +3,6 @@
 members = [
     "toylang",
     "toyc",
-    "toyvm",
-    "tests",
-    "toy_runtime",
     "toy_macros",
-    "toy_share"
+    "tests"
 ]
