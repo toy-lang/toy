@@ -1,6 +1,6 @@
 <div align="center">
-    <img alt="Crates.io" src="https://img.shields.io/crates/v/toylang?style=flat-square">
-    <img alt="Crates.io" src="https://img.shields.io/crates/d/toylang?style=flat-square">
+    <a href="https://crates.io/crates/toylang"><img alt="Crates.io" src="https://img.shields.io/crates/v/toylang?style=flat-square">
+        <img alt="Crates.io" src="https://img.shields.io/crates/d/toylang?style=flat-square"></a>
     <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/toy-lang/toy?style=flat-square">
 </div>
 
