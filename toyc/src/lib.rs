@@ -18,6 +18,8 @@ pub mod value;
 pub mod lexer;
 pub mod parser;
 
+mod traverse;
+
 pub struct SourceCode {
     pub display_name: String,
     pub code: String,
@@ -58,5 +60,7 @@ pub trait Skeleton {
 }
 
 pub fn builder<T: Skeleton>(skel: T) {
-    skel.entry();
+    let s = skel.entry();
+    let l = lexer::lex(s.code);
+    let t = traverse::traverse(l);
 }
