@@ -6,19 +6,30 @@ pub enum Token {
     Whitespace,
     #[token(";")]
     SemiColon,
-
+    #[token(".")]
+    Period,
+    #[token("::")]
+    DoubleColon,
+    #[token(":")]
+    Colon,
     #[token("(")]
     LeftParen,
     #[token(")")]
     RightParen,
-    #[regex("[a-zA-Z_]+", priority = 1)]
+    #[token("{")]
+    LeftCurly,
+    #[token("}")]
+    RightCurly,
+    #[regex("[a-zA-Z_]+")]
     Ident,
-    #[regex(r"//[^/]([^\n]*)", priority = 2)]
-    #[regex(r"/\*[^*]([\s\S]*)\*/", priority = 3)]
+    #[regex(r"//[^/]([^\n]*)\n")]
     Comment,
-    #[regex(r"///([^\n]*)", priority = 4)]
-    #[regex(r"/\*\*([\s\S]*)\*/", priority = 5)]
-    DocComment
+    #[regex(r"/\*[^\*][^\*/]*\*/")]
+    BlockComment,
+    #[regex(r"///[^\n]*")]
+    DocComment,
+    #[regex(r"/\*\*[^\*/]*\*/")]
+    DocBlockComment
 }
 
 #[cfg(test)]
@@ -26,10 +37,24 @@ mod tests {
     use super::*;
 
     #[test]
-    fn comments() {
-        let a: Vec<_> = Token::lexer("/** */").collect();
-        println!("{:?}", a);
-        assert_eq!(a[0].as_ref().unwrap(), &Token::DocComment);
-        assert_eq!(Token::lexer("/* */").next().unwrap().unwrap(), Token::Comment);
+    fn call() {
+        let tok: Result<Vec<Token>, ()> = Token::lexer("a::C.d(e); /* i think */ //this is a cool function
+/** doc comment */").collect();
+        assert_eq!(tok.unwrap(), vec![
+            Token::Ident,
+            Token::DoubleColon,
+            Token::Ident,
+            Token::Period,
+            Token::Ident,
+            Token::LeftParen,
+            Token::Ident,
+            Token::RightParen,
+            Token::SemiColon,
+            Token::Whitespace,
+            Token::BlockComment,
+            Token::Whitespace,
+            Token::Comment,
+            Token::DocBlockComment
+        ])
     }
 }
