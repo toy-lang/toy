@@ -3,6 +3,7 @@
 members = [
     "toylang",
     "toyc",
+    "toy_codegen",
     "toy_macros",
     "tests"
 ]

@@ -1,0 +1,16 @@
+[package]
+name = "toy_codegen"
+version = "0.1.0"
+edition = "2021"
+authors = ["WhyNotDogie"]
+description = "The toylang compiler codegen"
+repository = "https://github.com/toy-lang/toy/"
+license = "ISC"
+keywords = ["toylang", "toy", "codegen"]
+categories = ["compilers", "command-line-utilities", "development-tools"]
+workspace = "../"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+toyc = { path="../toyc" }

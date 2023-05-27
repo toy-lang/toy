@@ -6,3 +6,5 @@ cd ../toyc
 cargo publish
 cd ../toy_macros
 cargo publish
+cd ../toy_codegen
+cargo publish

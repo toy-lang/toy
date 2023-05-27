@@ -89,6 +89,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "toy_codegen"
+version = "0.1.0"
+dependencies = [
+ "toyc",
+]
+
+[[package]]
 name = "toy_macros"
 version = "0.1.4"
 dependencies = [
