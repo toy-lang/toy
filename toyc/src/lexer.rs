@@ -4,6 +4,7 @@ use logos::Logos;
 
 #[derive(Logos, Debug, PartialEq)]
 pub enum LogosToken {
+    // Normal Tokens
     #[regex(r"[ \t\n\f]", priority = 0)]
     Whitespace,
     #[token(";")]
@@ -22,6 +23,12 @@ pub enum LogosToken {
     LeftCurly,
     #[token("}")]
     RightCurly,
+    #[token("#[")]
+    TagSquareBracketLeft,
+    #[token("[")]
+    SquareBracketLeft,
+    #[token("]")]
+    SquareBracketRight,
     #[regex("[a-zA-Z_]+")]
     Ident,
     #[regex(r"//[^/]([^\n]*)\n")]
@@ -31,7 +38,13 @@ pub enum LogosToken {
     #[regex(r"///[^\n]*")]
     DocComment,
     #[regex(r"/\*\*[^\*/]*\*/")]
-    DocBlockComment
+    DocBlockComment,
+
+    // Keyword Tokens
+    #[token("fn")]
+    FunctionKeyword,
+    #[token("async")]
+    AsyncKeyword
 }
 
 #[cfg(test)]
