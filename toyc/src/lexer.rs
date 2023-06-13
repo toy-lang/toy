@@ -7,10 +7,13 @@ pub enum LogosToken {
     // Normal Tokens
     #[regex(r"[ \t\n\f]", priority = 0)]
     Whitespace,
+
     #[token(";")]
     SemiColon,
     #[token(".")]
     Period,
+    #[token(",")]
+    Comma,
     #[token("::")]
     DoubleColon,
     #[token(":")]
@@ -29,6 +32,9 @@ pub enum LogosToken {
     SquareBracketLeft,
     #[token("]")]
     SquareBracketRight,
+    #[token("!")]
+    Not,
+
     #[regex("[a-zA-Z_]+")]
     Ident,
     #[regex(r"//[^/]([^\n]*)\n")]
@@ -40,11 +46,20 @@ pub enum LogosToken {
     #[regex(r"/\*\*[^\*/]*\*/")]
     DocBlockComment,
 
+    #[regex(r"[1-9][_1-9]*")]
+    IntegerLiteral,
+    #[regex(r#""(?:[^"]|\\")*""#)]
+    StringLiteral,
+
     // Keyword Tokens
     #[token("fn")]
     FunctionKeyword,
     #[token("async")]
-    AsyncKeyword
+    AsyncKeyword,
+    #[token("let")]
+    LetKeyword,
+    #[token("mut")]
+    MutKeyword
 }
 
 #[cfg(test)]
