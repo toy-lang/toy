@@ -1,5 +1,17 @@
+pub struct Ast {
+    source_files: Vec<SourceFile>
+}
+
+pub struct SourceFile {
+    // TODO
+}
+
 pub enum Statement {
     Function,
+    Expr(Expr)
+}
+
+pub enum Expr {
     Block(Block)
 }
 
@@ -28,12 +40,6 @@ pub struct Block {
     pub statements: Vec<Statement>
 }
 
-pub trait Callable {}
-
-impl Callable for Function {}
-impl Callable for Struct {}
-impl Callable for Ident {}
-
-pub struct FunctionCall<T: Callable> {
-    pub called_fn: T
+pub struct FunctionCall {
+    pub called_fn: Expr
 }

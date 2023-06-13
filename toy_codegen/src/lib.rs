@@ -1,14 +1,29 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+/// The backend for the final stage of compiling.
+/// Examples:
+/// ```rust
+/// # use toy_codegen::{ToylangCodegenTarget, CodegenInput, CodegenOutput};
+/// pub struct MyCodeGen {
+///     
+/// }
+/// 
+/// impl ToylangCodegenTarget for MyCodeGen {
+///     fn startup() -> Self {
+///         Self {}
+///     }
+///     fn compile(&mut self, ast: CodegenInput) -> CodegenOutput {
+///         todo!()
+///     }
+/// }
+/// ```
+pub trait ToylangCodegenTarget {
+    fn compile(&mut self, ast: CodegenInput) -> CodegenOutput;
+    fn startup() -> Self;
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub struct CodegenInput {
+    ast: toy_ast::Ast
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub struct CodegenOutput {
+
 }
