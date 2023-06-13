@@ -1,5 +1,3 @@
-pub mod ast;
-
 use crate::lexer::TokenStream;
 
 pub struct Parser {

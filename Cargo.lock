@@ -89,10 +89,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "toy_ast"
+version = "0.1.0"
+
+[[package]]
 name = "toy_codegen"
 version = "0.1.0"
 dependencies = [
- "toyc",
+ "toy_ast",
 ]
 
 [[package]]
