@@ -1,0 +1,34 @@
+# Build, test and publish all packages on push to branch `latest`
+
+name: Latest
+
+on:
+  push:
+    branches: [ "latest" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: Swatinem/rust-cache@v2
+    - name: Build
+      run: cargo build --verbose
+    - name: Test
+      run: cargo test --verbose
+    - name: Report Status
+      run: echo BUILD_SUCCESS_123QWERT
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ always() && contains(join(needs.*.result, ','), 'BUILD_SUCCESS_QWERT') }}
+    needs: [build_test]
+    steps:
+    - uses: actions/checkout@v3
+    - uses: Swatinem/rust-cache@v2
+    - name: publish
+      run: bash -e ./tools/publish.sh
