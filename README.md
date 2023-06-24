@@ -8,10 +8,7 @@
 Toylang is a (WIP) trait (also known as an "interface") oriented programming language developed by Teamminty, aiming to be similar to rust, but fully trait oriented and with insanely fast compile times with multithreading and cranelift, one of the fastest compiler backends ever. With compile times that fast, it feels like an interpreted lamguage! Toylang also aims to have some of rust's safety guarentees. We have optional lifetimes, if you don't use them we have the compile find the right time to drop the data..
 
 ## Install
-<div align="center">
-    <kbd><a>Install ToyVM (Recommended)</a></kbd><br>
-    <kbd><a>Install Toy DevKit (For Developers)</a></kbd>
-</div>
+Installation instructions can be found [here](https://example.com).
 
 ## Usage
 ### Windows:
