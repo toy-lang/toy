@@ -4,8 +4,8 @@
     <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/toy-lang/toy?style=flat-square">
 </div>
 
-# toy
-> "i liek toy", as a wise man (me) once said.
+# Toylang
+Toylang is a (WIP) trait (also known as an "interface") oriented programming language developed by Teamminty, aiming to be similar to rust, but fully trait oriented and with insanely fast compile times with multithreading and cranelift, one of the fastest compiler backends ever. With compile times that fast, it feels like an interpreted lamguage! Toylang also aims to have some of rust's safety guarentees. We have optional lifetimes, if you don't use them we have the compile find the right time to drop the data..
 
 ## Install
 <div align="center">
