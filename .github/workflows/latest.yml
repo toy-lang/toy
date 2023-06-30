@@ -25,7 +25,7 @@ jobs:
       run: echo BUILD_SUCCESS_123QWERT
   publish:
     runs-on: ubuntu-latest
-    if: ${{ always() && contains(join(needs.*.result, ','), 'BUILD_SUCCESS_QWERT') }}
+    if: ${{ always() && contains(join(needs.*.result, ','), 'BUILD_SUCCESS_123QWERT') }}
     needs: [build_test]
     steps:
     - uses: actions/checkout@v3
