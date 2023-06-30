@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build_test:
+  build_test_publish:
 
     runs-on: ubuntu-latest
 
@@ -21,14 +21,5 @@ jobs:
       run: cargo build --verbose
     - name: Test
       run: cargo test --verbose
-    - name: Report Status
-      run: echo BUILD_SUCCESS_123QWERT
-  publish:
-    runs-on: ubuntu-latest
-    if: ${{ always() && contains(join(needs.*.result, ','), 'BUILD_SUCCESS_123QWERT') }}
-    needs: [build_test]
-    steps:
-    - uses: actions/checkout@v3
-    - uses: Swatinem/rust-cache@v2
     - name: publish
       run: bash -e ./tools/publish.sh
