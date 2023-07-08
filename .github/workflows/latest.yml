@@ -1,0 +1,25 @@
+# Build, test and publish all packages on push to branch `latest`
+
+name: Latest
+
+on:
+  push:
+    branches: [ "latest" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build_test_publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: Swatinem/rust-cache@v2
+    - name: Build
+      run: cargo build --verbose
+    - name: Test
+      run: cargo test --verbose
+    - name: publish
+      run: bash -e ./tools/publish.sh
