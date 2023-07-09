@@ -88,18 +88,13 @@ mod tests {
         ])
     }
 }
-
-pub struct Token {
-    span: usize,
-    tokentype: LogosToken,
-    source: String
+pub struct TokenStream<'a> {
+    val: logos::Lexer<'a, LogosToken>
 }
 
-pub struct TokenStream(Vec<Token>);
 
-
-pub fn lex(input: String) -> TokenStream {
-    let t = LogosToken::lexer(input.as_str());
+pub fn lex<'a>(input: &'a str) -> TokenStream<'a> {
+    let t = LogosToken::lexer(input);
     let ts = transform::transform(t);
     ts
 }

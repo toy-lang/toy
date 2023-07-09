@@ -7,7 +7,7 @@ pub struct Parser {
 
 
 impl Parser {
-    pub fn parse() {
+    pub fn parse(&mut self) {
         
     }
 }
